@@ -41,7 +41,7 @@ SRP and Dependency Inversion via [Dagger](https://google.github.io/dagger/)
 
 
 ### - Any assumptions/comments/notes about any particular decision?
-I faced a few high level problems about Data Binding. Both of these issues are still open. I'll follow that issue but no idea when it resolves. You can read Known Issues part to details. 
+I faced a few high level problems about Data Binding. Both of these issues are still open. I'll follow that issues but no idea when they resolve. You can read Known Issues part to details. 
 
 ### - What would you change if you had more time?
 I must have used the official way that is called [Android Paging Library](https://developer.android.com/topic/libraries/architecture/paging/) to infinite scroll but didn't have any experience and also didn't have much time to research and implement it. I'll work on it ASAP.
