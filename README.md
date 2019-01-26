@@ -31,7 +31,7 @@ This project written by Kotlin Language and uses MVVM architecture.
 ### - Explain the project in general and how to run it.
 This project uses [TheMovieDB Api](https://www.themoviedb.org/documentation/api). It shows you the movies in three different categories. There are Top Rated, Upcoming and Now Playing categories and the other step is 
 when you click on some movie, it takes the selected movie id and gets the detail of that movie. 
-If you want to run this project, just clone it and put your API KEY to build.gradle file. There is an variable that is called API_KEY. You must put your api key to there. You can get your api key from [here](https://www.themoviedb.org/)
+If you want to run this project, just clone it and put your API KEY to build.gradle file. There is a variable that is called API_KEY. You must put your api key to there. You can get your api key from [here](https://www.themoviedb.org/)
 
 ### - Why you have selected that software architecture?
 This project uses the Android MVVM architecture. In order to support both orientation of this project, prevent possible memory leaks or weird behaviors, the lifecycle awareness is very needed. The ViewModel component takes care of that responsibility via its lifecycle owner(Activities or Fragments).
