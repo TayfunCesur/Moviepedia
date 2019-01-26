@@ -56,7 +56,7 @@ I must have used the official way that is called [Android Paging Library](https:
  
 ## Does your project require any particular tool to be able to run?
 
-No. Just get your api key from [here](https://www.themoviedb.org/). Open project on Android Studio and paste your key. Then you are good to go!
+No. Just get your api key from [here](https://www.themoviedb.org/). Clone this project to Android Studio and paste your key. Then you are good to go!
 
 ## Licence
 ```
