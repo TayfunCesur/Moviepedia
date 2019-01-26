@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Moviepedia</string>
+    <string name="splash_text">Moviepedia \nTayfun Cesur</string>
+    <string name="home_toolbar_title">Moviepedia</string>
+    <string name="first_tab">Top Rated</string>
+    <string name="second_tab">Upcoming</string>
+    <string name="third_tab">Now Playing</string>
+    <string name="no_connection">You have not internet connection!</string>
+    <string name="noConnectionStr">NoConnectionFragment</string>
+    <string name="loading">Loading…</string>
+    <string name="errorDesc">An error occurred while getting movies.</string>
+    <string name="release_date">Release Date :</string>
+    <string name="search">Search</string>
+    <string name="movieDetail">MovieDetailFragmentTag</string>
+    <string name="add_to_fav">Add to fav</string>
+    <string name="min">minute</string>
+</resources>

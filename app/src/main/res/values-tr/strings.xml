@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Moviepedia</string>
+    <string name="splash_text">Moviepedia \nTayfun Cesur</string>
+    <string name="home_toolbar_title">Moviepedia</string>
+    <string name="first_tab">En Yüksek</string>
+    <string name="second_tab">Gelecekler</string>
+    <string name="third_tab">Şuanda</string>
+    <string name="no_connection">İnternet bağlantınız bulunmamaktadır!</string>
+    <string name="noConnectionStr">NoConnectionFragment</string>
+    <string name="loading">Yükleniyor…</string>
+    <string name="errorDesc">Bu işlem esnasında beklenmedik bir hata oluştu.</string>
+    <string name="release_date">Çıkış Tarihi:</string>
+    <string name="search">Arama</string>
+    <string name="movieDetail">MovieDetailFragmentTag</string>
+    <string name="add_to_fav">Favorilere ekle</string>
+    <string name="min">dakika</string>
+</resources>

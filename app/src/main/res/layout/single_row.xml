@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_normal"
+        android:paddingEnd="@dimen/padding_normal"
+        android:paddingRight="@dimen/padding_normal"
+        android:paddingLeft="@dimen/padding_normal"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@color/bgColor"
+        android:id="@+id/movie_main_row">
+
+    <FrameLayout android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentStart="true"
+                 android:id="@+id/imageLayout"
+                 android:layout_alignParentLeft="true">
+
+        <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avl_avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:indicatorColor="@color/colorAccent"
+                app:indicatorName="BallClipRotateIndicator"/>
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="@dimen/movie_image_width"
+                android:id="@+id/image"
+                android:layout_height="@dimen/movie_image_height"
+                app:riv_corner_radius="8dip"
+                android:layout_marginTop="@dimen/margin_tiny"
+        />
+
+    </FrameLayout>
+
+    <LinearLayout android:layout_width="0dp"
+                  android:weightSum="2"
+                  android:orientation="horizontal"
+                  app:layout_constraintRight_toRightOf="parent"
+                  android:paddingTop="@dimen/margin_bit_small"
+                  app:layout_constraintLeft_toRightOf="@+id/imageLayout"
+                  android:id="@+id/headerLayout"
+                  android:paddingStart="@dimen/padding_normal"
+                  android:paddingBottom="@dimen/padding_small"
+                  android:gravity="center_vertical"
+                  android:layout_height="wrap_content"
+                  android:paddingLeft="@dimen/padding_normal"
+                  tools:ignore="RtlSymmetry">
+
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <ImageView
+                    android:layout_width="@dimen/normal_image_size"
+                    android:layout_height="@dimen/normal_image_size"
+                    android:src="@drawable/ic_star"/>
+
+            <com.tayfuncesur.moviepedia.components.FontedMediumTextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/rateText"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_small"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_bit_small"
+                    android:layout_marginStart="@dimen/margin_bit_small"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/rateLayout"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <ImageView android:layout_width="@dimen/normal_image_size"
+                       android:layout_height="@dimen/normal_image_size"
+                       android:padding="2dp"
+                       android:src="@drawable/ic_favorite"/>
+
+            <com.tayfuncesur.moviepedia.components.FontedMediumTextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/voteText"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_small"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_bit_small"
+                    android:layout_marginStart="@dimen/margin_bit_small"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:textColor="#FFFFFF"
+              android:textSize="@dimen/text_size_normal"
+              app:layout_constraintTop_toBottomOf="@+id/headerLayout"
+              app:layout_constraintStart_toEndOf="@id/imageLayout"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:paddingStart="@dimen/padding_normal"
+              android:paddingBottom="@dimen/padding_small"
+              android:id="@+id/title"
+              android:paddingLeft="@dimen/padding_normal" tools:ignore="RtlSymmetry"/>
+
+    <TextView android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:textColor="@color/white"
+              android:textSize="@dimen/text_size_small"
+              app:layout_constraintStart_toEndOf="@id/imageLayout"
+              app:layout_constraintTop_toBottomOf="@+id/title"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:paddingTop="@dimen/padding_small"
+              android:paddingStart="@dimen/padding_normal"
+              android:paddingEnd="@dimen/padding_normal"
+              android:id="@+id/releaseDate"
+              android:paddingBottom="@dimen/padding_small"
+    />
+
+    <TextView android:layout_width="0dp"
+              android:layout_height="0dp"
+              android:textColor="@color/white"
+              android:textSize="@dimen/text_size_small"
+              app:layout_constraintStart_toEndOf="@id/imageLayout"
+              app:layout_constraintTop_toBottomOf="@id/releaseDate"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintBottom_toTopOf="@+id/divider"
+              android:paddingTop="@dimen/padding_small"
+              android:paddingStart="@dimen/padding_normal"
+              android:paddingEnd="@dimen/padding_normal"
+              android:layout_marginBottom="@dimen/margin_small"
+              android:maxLines="6"
+              android:id="@+id/overView"
+              android:ellipsize="end"
+    />
+
+
+    <View android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/white"
+          android:alpha="0.5"
+          android:id="@+id/divider"
+          app:layout_constraintTop_toBottomOf="@+id/imageLayout"/>
+
+</android.support.constraint.ConstraintLayout>

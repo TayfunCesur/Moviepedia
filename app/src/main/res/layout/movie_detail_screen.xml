@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="java.lang.String"/>
+        <import type="android.arch.lifecycle.LiveData"/>
+        <import type="com.tayfuncesur.moviepedia.model.Status"/>
+        <import type="com.tayfuncesur.moviepedia.base.Resource"/>
+        <import type="com.tayfuncesur.moviepedia.model.MovieDetail"/>
+        <variable name="data" type="LiveData&lt;Resource&lt;MovieDetail&gt;&gt;"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:paddingStart="@dimen/padding_normal"
+            android:paddingEnd="@dimen/padding_normal"
+            android:paddingRight="@dimen/padding_normal"
+            android:paddingTop="@dimen/padding_normal"
+            android:paddingLeft="@dimen/padding_normal"
+            android:background="@color/bgColor"
+            android:layout_height="match_parent">
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:id="@+id/headerLayout">
+
+                    <FrameLayout android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:id="@+id/imageLayout">
+
+                        <com.wang.avi.AVLoadingIndicatorView
+                                android:id="@+id/avl_avatar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:indicatorColor="@color/colorAccent"
+                                app:indicatorName="BallClipRotateIndicator"/>
+
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                                android:layout_width="@dimen/movie_image_width"
+                                android:id="@+id/image"
+                                android:layout_height="@dimen/movie_image_height"
+                                app:riv_corner_radius="8dip"
+                        />
+
+                    </FrameLayout>
+
+
+                    <LinearLayout android:layout_width="match_parent"
+                                  android:layout_marginStart="@dimen/margin_normal"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="vertical"
+                                  android:layout_marginLeft="@dimen/margin_normal">
+
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:weightSum="2"
+                                      android:orientation="horizontal"
+                                      app:layout_constraintRight_toRightOf="parent"
+                                      android:paddingTop="@dimen/margin_bit_small"
+                                      app:layout_constraintLeft_toRightOf="@+id/imageLayout"
+                                      android:paddingBottom="@dimen/padding_small"
+                                      android:gravity="center_vertical"
+                                      android:layout_height="wrap_content"
+                                      tools:ignore="RtlSymmetry">
+
+
+                            <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                <ImageView
+                                        android:layout_width="@dimen/normal_image_size"
+                                        android:layout_height="@dimen/normal_image_size"
+                                        android:src="@drawable/ic_star"/>
+
+                                <com.tayfuncesur.moviepedia.components.FontedMediumTextView
+                                        android:layout_width="wrap_content"
+                                        android:id="@+id/rateText"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/text_size_small"
+                                        android:layout_height="wrap_content"
+                                        android:text="@{String.valueOf(data.data.voteAvarage)}"
+                                        android:layout_marginLeft="@dimen/margin_bit_small"
+                                        android:layout_marginStart="@dimen/margin_bit_small"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:id="@+id/rateLayout"
+                                    android:gravity="center_vertical"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                <ImageView android:layout_width="@dimen/normal_image_size"
+                                           android:layout_height="@dimen/normal_image_size"
+                                           android:padding="2dp"
+                                           android:src="@drawable/ic_favorite"/>
+
+                                <com.tayfuncesur.moviepedia.components.FontedMediumTextView
+                                        android:layout_width="wrap_content"
+                                        android:id="@+id/voteText"
+                                        android:text="@{String.valueOf(data.data.voteCount)}"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/text_size_small"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/margin_bit_small"
+                                        android:layout_marginStart="@dimen/margin_bit_small"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <com.tayfuncesur.moviepedia.components.FontedMediumTextView
+                                android:layout_width="match_parent"
+                                android:id="@+id/genres"
+                                android:maxLines="2"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:layout_marginBottom="@dimen/margin_small"
+                                android:ellipsize="end"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_normal"
+                                android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/productionLayout"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:layout_marginBottom="@dimen/margin_small"
+                                android:visibility="gone"
+                                android:orientation="horizontal">
+
+                            <ImageView
+                                    android:layout_width="@dimen/normal_image_size"
+                                    android:layout_height="@dimen/normal_image_size"
+                                    android:id="@+id/productionImage"/>
+
+                            <com.tayfuncesur.moviepedia.components.FontedMediumTextView
+                                    android:layout_width="wrap_content"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_small"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/productionText"
+                                    android:layout_marginLeft="@dimen/margin_bit_small"
+                                    android:layout_marginStart="@dimen/margin_bit_small"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/productionCountryLayout"
+                                android:visibility="gone"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:layout_marginBottom="@dimen/margin_small"
+                                android:orientation="horizontal">
+
+                            <ImageView
+                                    android:layout_width="@dimen/normal_image_size"
+                                    android:layout_height="@dimen/normal_image_size"
+                                    android:src="@drawable/ic_worldwide"/>
+
+                            <com.tayfuncesur.moviepedia.components.FontedMediumTextView
+                                    android:layout_width="wrap_content"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_small"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/productionCountryText"
+                                    android:layout_marginLeft="@dimen/margin_bit_small"
+                                    android:layout_marginStart="@dimen/margin_bit_small"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/timeLayout"
+                                android:visibility="gone"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:layout_marginBottom="@dimen/margin_small"
+                                android:orientation="horizontal">
+
+                            <ImageView
+                                    android:layout_width="@dimen/normal_image_size"
+                                    android:layout_height="@dimen/normal_image_size"
+                                    android:src="@drawable/ic_hourglass"/>
+
+                            <com.tayfuncesur.moviepedia.components.FontedMediumTextView
+                                    android:layout_width="match_parent"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_small"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/timeText"
+                                    android:layout_marginLeft="@dimen/margin_bit_small"
+                                    android:layout_marginStart="@dimen/margin_bit_small"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <com.tayfuncesur.moviepedia.components.FontedMediumTextView
+                        android:layout_width="match_parent"
+                        android:text="@{data.data.overview}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_normal"
+                        android:layout_marginBottom="@dimen/margin_normal"
+                        android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:id="@+id/loadingLayout"
+                visibleGone="@{data.status == Status.LOADING}"
+                android:background="@color/bgColor"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="0dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/loadingAnim"
+                    android:layout_width="@dimen/loading_anim_size"
+                    android:layout_height="@dimen/loading_anim_size"
+                    android:layout_gravity="center"
+                    app:lottie_loop="true"
+                    app:lottie_fileName="anims/loading.json"
+                    android:background="@null"
+                    app:lottie_autoPlay="true"/>
+
+            <com.tayfuncesur.moviepedia.components.FontedMediumTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loading"
+                    android:textSize="@dimen/text_size_normal"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:id="@+id/loadingText"
+                    android:textColor="@color/white"
+                    app:layout_constraintRight_toRightOf="parent"/>
+
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>
+
