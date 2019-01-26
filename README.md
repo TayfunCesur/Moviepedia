@@ -25,13 +25,13 @@ This project written by Kotlin Language and uses MVVM architecture.
 ## Known Issues
 
  - There is some memory leak on Android Data Binding Library. Even if I clear manually when onDestroy, I didn't figure it out yet. Here is the issue ([Data Binding Memory Leak](https://github.com/square/leakcanary/issues/1137))
- - If you want to use fastlane to automate automate building and releasing or etc, I guess you don't want to use Data Binding, because here is the issue about [ProcessDataBinding issue](https://github.com/googlesamples/android-architecture-components/issues/427)
+ - If you want to use fastlane to automate building and releasing or etc, I guess you don't want to use Data Binding, because here is the issue about [ProcessDataBinding issue](https://github.com/googlesamples/android-architecture-components/issues/427)
 
 ## Submission
 ### - Explain the project in general and how to run it.
 This project uses [TheMovieDB Api](https://www.themoviedb.org/documentation/api). It shows you the movies in three different categories. There are Top Rated, Upcoming and Now Playing categories and the other step is 
 when you click on some movie, it takes the selected movie id and gets the detail of that movie. 
-If you want to run this project, just clone it and put your API KEY to build.gradle file. There is an variable that is called API_KEY. You must put your api key to there. You can your api key from [here](https://www.themoviedb.org/)
+If you want to run this project, just clone it and put your API KEY to build.gradle file. There is an variable that is called API_KEY. You must put your api key to there. You can get your api key from [here](https://www.themoviedb.org/)
 
 ### - Why you have selected that software architecture?
 This project uses the Android MVVM architecture. In order to support both orientation of this project, prevent possible memory leaks or weird behaviors, the lifecycle awareness is very needed. The ViewModel component takes care of that responsibility via its lifecycle owner(Activities or Fragments).
