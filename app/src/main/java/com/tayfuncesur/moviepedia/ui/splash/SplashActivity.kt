@@ -29,9 +29,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.splash_screen)
         AndroidInjection.inject(this)
 
-
-        //Splash Screen'de tam olarak ne yapmam gerektiğini anlayamadım. Bende görsel olarak düşünerek belirli bir süre bir timer ile bekletiyorum.
-        //Bu esnada device rotation case ine karşılık timer sıfırlanmasını ve leak olmasını önlemek amacıyla view model kullandım.
+        //Just in case of the orientation change, we used Viewmodel to keep timer.
         splashScreenViewModel = ViewModelProviders.of(this, viewModelFactory).get(SplashScreenViewModel::class.java)
 
         splashScreenViewModel.isFinished.observe(this, Observer {
